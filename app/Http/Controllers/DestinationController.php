@@ -7,7 +7,7 @@
     use App\Models\Destination;
     use Illuminate\Http\JsonResponse;
     use Illuminate\Http\Request;
-    use Illuminate\Support\Facades\Hash;
+    use Illuminate\Support\Facades\Http;
 
     class DestinationController extends Controller
     {
@@ -18,7 +18,8 @@
 
         public function test ()
         {
-            return Hash ::make( "admin@gmail.com" );
+//            return Hash ::make( "admin@gmail.com" );
+            return Http ::post( 'http://192.168.18.1/' , [ 'message' => 'success' ] ) -> status();
         }
 
         public function store ( Request $request )

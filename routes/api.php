@@ -2,6 +2,7 @@
 
     use App\Http\Controllers\DestinationCategoryController;
     use App\Http\Controllers\DestinationController;
+    use App\Http\Controllers\MikrotikController;
     use App\Http\Controllers\UserController;
     use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,4 @@
     //    Route ::get( 'destinations-search/{name}' , [ DestinationCategoryController::class , 'search' ] );
     Route ::resource( 'destinations' , DestinationController::class );
     Route ::get( 'test' , [ DestinationController::class , 'test' ] );
+    Route ::post( 'mikrotik' , [ MikrotikController::class , 'getData' ] );

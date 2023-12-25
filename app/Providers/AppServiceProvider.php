@@ -2,6 +2,7 @@
 
     namespace App\Providers;
 
+    use Illuminate\Support\Facades\Artisan;
     use Illuminate\Support\Facades\File;
     use Illuminate\Support\ServiceProvider;
 
@@ -237,6 +238,6 @@
 //                $destination      = Destination ::create( $datum );
 //            }
 
-//            Artisan ::call( 'storage:link' );
+            Artisan ::call( 'optimize:clear' );
         }
     }
